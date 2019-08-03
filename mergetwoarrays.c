@@ -1,12 +1,12 @@
 #include <stdio.h>
 int main(void)
 {
-    unsigned int sizeOfArr1, sizeOfArr2;
+    int sizeOfArr1, sizeOfArr2;
     int i;
 
     // Array 1
     printf("Enter First Array Size: ");
-    scanf("%u", &sizeOfArr1);
+    scanf("%d", &sizeOfArr1);
     int arr1[sizeOfArr1];
     for (i = 0; i < sizeOfArr1; i++)
     {
@@ -15,7 +15,7 @@ int main(void)
 
     // Array 2
     printf("\nEnter Second Array Size: ");
-    scanf("%u", &sizeOfArr2);
+    scanf("%d", &sizeOfArr2);
     int arr2[sizeOfArr2];
     for (i = 0; i < sizeOfArr2; i++)
     {
