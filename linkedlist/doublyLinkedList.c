@@ -12,7 +12,6 @@ struct node *front = NULL;
 struct node *last = NULL;
 int nodeCount = 0;
 
-// Add Node at Start or Last
 int addNode(int Item, int place)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
