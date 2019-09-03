@@ -62,9 +62,9 @@ int main(void)
             {
                 max = tempMax;
             }
-        }
 
-        prev = inBetween;
+            prev = inBetween;
+        }
     }
 
     printf("%d\n", max);
