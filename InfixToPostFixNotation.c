@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <math.h>
 char Exp[50];
 char Optr[50];
 int ExpIndex = -1;
@@ -122,6 +124,60 @@ int main(void)
     }
 
     printf("%s\n", Exp);
+
+    char choice;
+    printf("Do you want to evaluate the expression?, press 'y' or 'Y' for Yes\tor\t'n' or 'N' for no\n");
+    scanf(" %c", &choice);
+
+    if (choice == 'Y' || choice == 'y')
+    {
+        int answer[50];
+        int index = 0;
+
+        for (i = 0; i <= ExpIndex; i++)
+        {
+            if (Exp[i] == '+')
+            {
+                answer[index - 2] = answer[index - 2] + answer[index - 1];
+                index--;
+            }
+            else if (Exp[i] == '-')
+            {
+                answer[index - 2] = answer[index - 2] - answer[index - 1];
+                index--;
+            }
+            else if (Exp[i] == '*')
+            {
+                answer[index - 2] = answer[index - 2] * answer[index - 1];
+                index--;
+            }
+            else if (Exp[i] == '/')
+            {
+                answer[index - 2] = answer[index - 2] / answer[index - 1];
+                index--;
+            }
+            else if (Exp[i] == '%')
+            {
+                answer[index - 2] = answer[index - 2] % answer[index - 1];
+                index--;
+            }
+            else if (Exp[i] == '^')
+            {
+                answer[index - 2] = pow(answer[index - 2], answer[index - 1]);
+                index--;
+            }
+            else
+            {
+                char temp[2];
+                temp[0] = Exp[i];
+                temp[1] = '\0';
+                answer[index] = atoi(temp);
+                index++;
+            }
+        }
+
+        printf("%d\n", answer[0]);
+    }
 
     return 0;
 }
