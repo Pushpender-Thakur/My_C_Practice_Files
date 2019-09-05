@@ -93,24 +93,29 @@ int main(void)
             int item;
             printf("Enter Value: ");
             scanf("%d", &item);
-            enqueue(item);
+            if (enqueue(item) == 1)
+            {
+                printf("\nSuccessfully EnQueued");
+            }
         }
         else if (choice == 2)
         {
             if (first == NULL)
             {
-                printf("No Elements in Queue");
+                printf("\nNo Elements in Queue");
             }
             else
             {
                 dequeue();
+
+                printf("\nDeQueued Successfully");
             }
         }
         else if (choice == 3)
         {
             if (first != NULL)
             {
-                printf("%d", getFront());
+                printf("\n%d", getFront());
             }
             else
             {
@@ -121,7 +126,7 @@ int main(void)
         {
             if (first == NULL)
             {
-                printf("No Elements in Queue");
+                printf("\nNo Elements in Queue");
             }
             else
             {
