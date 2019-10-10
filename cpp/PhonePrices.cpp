@@ -19,8 +19,6 @@ bool goodPrice(int *arr, int point)
     return isTrue;
 }
 
-#define s std::
-
 int main(void)
 {
     int t;
